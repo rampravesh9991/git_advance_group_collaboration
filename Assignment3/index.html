@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bituniverse</title>
+    <style>
+        .container {
+          background-color: #0e0e0e;
+          display: flex;
+          flex-direction: column;
+          padding-top: 80px;
+        }
+      
+        .main-content {
+          display: flex;
+          margin-top: 128px;
+          flex-direction: column;
+        }
+      
+        @media (max-width: 991px) {
+          .main-content {
+            margin-top: 40px;
+          }
+        }
+      
+        .header-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      
+        @media (max-width: 991px) {
+          .header-content {
+            max-width: 100%;
+          }
+        }
+      
+        .section {
+          display: flex;
+          flex-direction: column;
+          padding: 60px 0;
+        }
+      
+        @media (max-width: 991px) {
+          .section {
+            max-width: 100%;
+          }
+        }
+      
+        .section-header {
+          align-items: center;
+          display: flex;
+          text-align: center;
+          justify-content: center;
+          padding: 0 60px;
+        }
+      
+        @media (max-width: 991px) {
+          .section-header {
+            padding: 0 20px;
+          }
+        }
+      
+        .content-container {
+          display: flex;
+          width: 100%;
+          max-width: 1200px;
+          flex-direction: column;
+        }
+      
+        @media (max-width: 991px) {
+          .content-container {
+            max-width: 100%;
+          }
+        }
+      
+        .title {
+          align-self: center;
+          color: #fecc00;
+          justify-content: center;
+          padding: 8px;
+          font: 600 56px/60px "Clash Display", -apple-system, Roboto, Helvetica, sans-serif;
+        }
+      
+        @media (max-width: 991px) {
+          .title {
+            font-size: 40px;
+            line-height: 48px;
+          }
+        }
+      
+        .subtitle {
+          color: #fff;
+          margin-top: 24px;
+          font: 400 20px/34px "Inter", sans-serif;
+        }
+      
+        @media (max-width: 991px) {
+          .subtitle {
+            max-width: 100%;
+          }
+        }
+      
+        .card-container {
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          margin-top: 60px;
+          padding: 0 60px;
+          flex-wrap: wrap;
+        }
+      
+        @media (max-width: 991px) {
+          .card-container {
+            margin-top: 40px;
+            padding: 0 20px;
+          }
+        }
+      
+        .cards {
+          display: flex;
+          width: 100%;
+          max-width: 1038px;
+          flex-direction: column;
+        }
+      
+        @media (max-width: 991px) {
+          .cards {
+            max-width: 100%;
+          }
+        }
+      
+        .card-group {
+          display: flex;
+          gap: 20px;
+        }
+      
+        @media (max-width: 991px) {
+          .card-group {
+            flex-direction: column;
+            gap: 0;
+          }
+        }
+      
+        .card {
+          display: flex;
+          flex-direction: column;
+          width: 33%;
+        }
+      
+        @media (max-width: 991px) {
+          .card {
+            width: 100%;
+          }
+        }
+      
+        .card-content {
+          border-radius: 12px;
+          backdrop-filter: blur(13px);
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          justify-content: center;
+          flex-grow: 1;
+        }
+      
+        @media (max-width: 991px) {
+          .card-content {
+            margin-top: 40px;
+          }
+        }
+      
+        .card-inner {
+          border-radius: 12px;
+          border: 3px solid #f9d326;
+          backdrop-filter: blur(13px);
+          background-color: #141411;
+          display: flex;
+          flex-direction: column;
+          padding: 16px 8px 56px;
+        }
+      
+        .card-image {
+          aspect-ratio: 1;
+          object-fit: auto;
+          object-position: center;
+          width: 159px;
+          align-self: center;
+        }
+      
+        .card-description {
+          justify-content: center;
+          display: flex;
+          margin-top: 9px;
+          flex-direction: column;
+          padding: 0 24px;
+        }
+      
+        @media (max-width: 991px) {
+          .card-description {
+            padding: 0 20px;
+          }
+        }
+      
+        .product-name {
+          color: #fff;
+          letter-spacing: 0.39px;
+          font: 700 20px "Inter", sans-serif;
+        }
+      
+        .product-status {
+          aspect-ratio: 100;
+          object-fit: auto;
+          object-position: center;
+          width: 171px;
+          border: 2px solid #fecc00;
+          align-self: center;
+          margin-top: 11px;
+        }
+      
+        .product-details {
+          color: #cfcfcf;
+          margin-top: 11px;
+          font: 400 16px/22px "Inter", sans-serif;
+        }
+      
+        .footer-container {
+          align-self: center;
+          margin-top: 60px;
+          width: 676px;
+          max-width: 100%;
+        }
+      
+        @media (max-width: 991px) {
+          .footer-container {
+            margin-top: 40px;
+          }
+        }
+      
+        .footer-content {
+          display: flex;
+          gap: 20px;
+        }
+      
+        @media (max-width: 991px) {
+          .footer-content {
+            flex-direction: column;
+            gap: 0;
+          }
+        }
+      
+        .footer-column {
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+        }
+      
+        @media (max-width: 991px) {
+          .footer-column {
+            width: 100%;
+          }
+        }
+      
+        .footer-card {
+          border-radius: 12px;
+          backdrop-filter: blur(13px);
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          justify-content: center;
+          flex-grow: 1;
+        }
+      
+        @media (max-width: 991px) {
+          .footer-card {
+            margin-top: 40px;
+          }
+        }
+      
+        .footer-card-inner {
+          border-radius: 12px;
+          border: 3px solid #f9d326;
+          backdrop-filter: blur(13px);
+          background-color: #141411;
+          display: flex;
+          flex-direction: column;
+          padding: 16px 8px 56px;
+        }
+      
+        .footer-card-description {
+          justify-content: center;
+          display: flex;
+          margin-top: 9px;
+          flex-direction: column;
+          padding: 0 24px;
+        }
+      
+        @media (max-width: 991px) {
+          .footer-card-description {
+            padding: 0 20px;
+          }
+        }
+      
+        .footer-product-name {
+          color: #fff;
+          letter-spacing: 0.39px;
+          font: 700 20px "Inter", sans-serif;
+        }
+      
+        .footer-product-status {
+          aspect-ratio: 100;
+          object-fit: auto;
+          object-position: center;
+          width: 171px;
+          border: 2px solid #fecc00;
+          align-self: center;
+          margin-top: 11px;
+        }
+      
+        .footer-product-details {
+          color: #cfcfcf;
+          margin-top: 11px;
+          font: 400 16px/22px "Inter", sans-serif;
+        }
+      
+        .spacer {
+          height: 60px;
+        }
+      
+        @media (max-width: 991px) {
+          .spacer {
+            max-width: 100%;
+          }
+        }
+      </style>
+</head>
+<body>
+    <section class="container">
+        <div class="main-content">
+          <header class="header-content">
+            <section class="section">
+              <div class="section-header">
+                <div class="content-container">
+                  <h1 class="title">
+                    <span class="highlight">Our</span>
+                    <span class="highlight-positive"> Products </span>
+                  </h1>
+                  <p class="subtitle">Pellentesque habitant morbi tristique senectus et netus et Pellentesque habitant morbi.</p>
+                </div>
+              </div>
+            </section>
+            <section class="card-container">
+              <div class="cards">
+                <div class="card-group">
+                  <article class="card">
+                    <div class="card-content">
+                      <div class="card-inner">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/098d38992dac018c985f041882eda8717cd03961a7bfb71f7e94beae2fbb7e8e?apiKey=fd199fa6f64347d3af7f8cc744df61ff&" alt="Product Image 1" class="card-image" />
+                        <div class="card-description">
+                          <h2 class="product-name">Bita Marketplace</h2>
+                          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ee599074f5b1df138e9ec30e66c55b6c3185019ad733dadd8113a31e9237adb0?apiKey=fd199fa6f64347d3af7f8cc744df61ff&" alt="Product Status" class="product-status" />
+                          <p class="product-details">Pellentesque habitant morbi tristique senectus et netus et malesuada Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="card">
+                    <div class="card-content">
+                      <div class="card-inner">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/20779220ba76d915579c6403504081249ac2d8e3f2b7043d3dac994000e086e8?apiKey=fd199fa6f64347d3af7f8cc744df61ff&" alt="Product Image 2" class="card-image" />
+                        <div class="card-description">
+                          <h2 class="product-name">Bitadex</h2>
+                          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ee599074f5b1df138e9ec30e66c55b6c3185019ad733dadd8113a31e9237adb0?apiKey=fd199fa6f64347d3af7f8cc744df61ff&" alt="Product Status" class="product-status" />
+                          <p class="product-details">Pellentesque habitant morbi tristique senectus et netus et malesuada Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="card">
+                    <div class="card-content">
+                      <div class="card-inner">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7b9ae91bca796d8cfd6498b3ad5355923987008b6ebb4a47d375efaaac277c7f?apiKey=fd199fa6f64347d3af7f8cc744df61ff&" alt="Product Image 3" class="card-image" />
+                        <div class="card-description">
+                          <h2 class="product-name">Bitabridge</h2>
+                          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ee599074f5b1df138e9ec30e66c55b6c3185019ad733dadd8113a31e9237adb0?apiKey=fd199fa6f64347d3af7f8cc744df61ff&" alt="Product Status" class="product-status" />
+                          <p class="product-details">Pellentesque habitant morbi tristique senectus et netus et malesuada Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </section>
+            <section class="footer-container">
+              <div class="footer-content">
+                <article class="footer-column">
+                  <div class="footer-card">
+                    <div class="footer-card-inner">
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b480c8e61005c54143e8fe2ba8da1b5463c8751c0a638a36bfba91b53cbfbfe6?apiKey=fd199fa6f64347d3af7f8cc744df61ff&" alt="Product Image 4" class="card-image" />
+                      <div class="footer-card-description">
+                        <h2 class="footer-product-name">Bitapad</h2>
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ee599074f5b1df138e9ec30e66c55b6c3185019ad733dadd8113a31e9237adb0?apiKey=fd199fa6f64347d3af7f8cc744df61ff&" alt="Product Status" class="footer-product-status" />
+                        <p class="footer-product-details">Pellentesque habitant morbi tristique senectus et netus et malesuada Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="footer-column">
+                  <div class="footer-card">
+                    <div class="footer-card-inner">
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/1c1a5dda60b6a00cf4327e367a5d4d0689d433a0d69c7c832fcc796932374e27?apiKey=fd199fa6f64347d3af7f8cc744df61ff&" alt="Product Image 5" class="card-image" />
+                      <div class="footer-card-description">
+                        <h2 class="footer-product-name">BitaLend</h2>
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ee599074f5b1df138e9ec30e66c55b6c3185019ad733dadd8113a31e9237adb0?apiKey=fd199fa6f64347d3af7f8cc744df61ff&" alt="Product Status" class="footer-product-status" />
+                        <p class="footer-product-details">Pellentesque habitant morbi tristique senectus et netus et malesuada Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+          </header>
+        </div>
+        <div class="spacer"></div>
+      </section>
+</body>
+</html>
