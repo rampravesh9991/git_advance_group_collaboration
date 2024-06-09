@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bituniverse</title>
+    <style>
+      .container1 {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        position: relative;
+        min-height: 887px;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 60px;
+      }
+      @media (max-width: 991px) {
+        .container {
+          padding: 0 20px;
+        }
+      }
+      .background-image {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      .content-wrapper {
+        position: relative;
+        display: flex;
+        margin-top: 126px;
+        width: 100%;
+        max-width: 1024px;
+        flex-direction: column;
+      }
+      @media (max-width: 991px) {
+        .content-wrapper {
+          max-width: 100%;
+          margin-top: 40px;
+        }
+      }
+      .text-content {
+        align-self: center;
+        display: flex;
+        width: 769px;
+        max-width: 100%;
+        padding-left: 11px;
+        flex-direction: column;
+      }
+      .text-wrapper {
+        display: flex;
+        gap: 0px;
+      }
+      @media (max-width: 991px) {
+        .text-wrapper {
+          max-width: 100%;
+          flex-wrap: wrap;
+          padding-right: 20px;
+        }
+      }
+      .description-container {
+        justify-content: center;
+        display: flex;
+        margin-top: 59px;
+        flex-direction: column;
+        text-align: center;
+      }
+      @media (max-width: 991px) {
+        .description-container {
+          max-width: 100%;
+          margin-top: 40px;
+        }
+      }
+      .description {
+        color: #fdffe3;
+        font: 400 24px/40px Inter, sans-serif;
+      }
+      @media (max-width: 991px) {
+        .description {
+          max-width: 100%;
+        }
+      }
+      .button-container {
+        justify-content: center;
+        align-self: center;
+        display: flex;
+        margin-top: 40px;
+        width: 175px;
+        max-width: 100%;
+        flex-direction: column;
+        font-size: 16px;
+        color: #1c1c1c;
+        font-weight: 700;
+        line-height: 169%;
+      }
+      .button-wrapper {
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .button-background {
+        justify-content: center;
+        border-radius: 100px;
+        background: linear-gradient(94deg, #fecc00 0%, #fea800 100%);
+        box-shadow: -2px -2px 20px 0px rgba(254, 204, 0, 0),
+          2px 2px 20px 0px rgba(254, 204, 0, 0);
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        padding: 4px;
+      }
+      .button-content {
+        justify-content: center;
+        border-radius: 100px;
+        background: linear-gradient(95deg, #fecc00 -2.53%, #fea800 102.53%);
+        border-color: rgba(255, 255, 255, 1);
+        border-style: solid;
+        border-width: 2px;
+        display: flex;
+        gap: 8px;
+        margin-right: -3px;
+        padding: 10px 20px;
+      }
+      .button-text {
+        font-family: Inter, sans-serif;
+      }
+      .button-icon {
+        aspect-ratio: 1;
+        object-fit: auto;
+        object-position: center;
+        width: 24px;
+        margin: auto 0;
+      }
+
+      .container2 {
+        justify-content: space-between;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.31);
+        box-shadow: 0px 2px 19.5px rgba(219, 184, 0, 0.2);
+        backdrop-filter: blur(14.5px);
+        background-color: rgba(92, 79, 5, 0.44);
+        display: flex;
+        gap: 20px;
+        padding: 16px 32px;
+      }
+      @media (max-width: 991px) {
+        .container {
+          flex-wrap: wrap;
+          padding: 0 20px;
+        }
+      }
+      .logo-wrapper {
+        display: flex;
+        gap: 9px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      @media (max-width: 991px) {
+        .logo-wrapper {
+          white-space: initial;
+        }
+      }
+      .logo-image {
+        aspect-ratio: 0.98;
+        object-fit: auto;
+        object-position: center;
+        width: 55px;
+      }
+      .logo-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto 0;
+      }
+      @media (max-width: 991px) {
+        .logo-text-wrapper {
+          white-space: initial;
+        }
+      }
+      .logo-title {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        color: #ffc603;
+        letter-spacing: 2.56px;
+        padding: 1px 0;
+        font: 16px Inter, sans-serif;
+      }
+      @media (max-width: 991px) {
+        .logo-title {
+          white-space: initial;
+        }
+      }
+      .logo-subtitle {
+        color: #fff;
+        letter-spacing: 10.21px;
+        margin-top: 8px;
+        font: 9px Inter, sans-serif;
+      }
+      .nav-wrapper {
+        display: flex;
+        gap: 20px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 92%;
+        justify-content: space-between;
+      }
+      @media (max-width: 991px) {
+        .nav-wrapper {
+          flex-wrap: wrap;
+        }
+      }
+      .nav-items {
+        display: flex;
+        gap: 8px;
+        color: #fff;
+        justify-content: flex-end;
+        margin: auto 0;
+      }
+      @media (max-width: 991px) {
+        .nav-items {
+          flex-wrap: wrap;
+        }
+      }
+      .nav-item {
+        font-family: Inter, sans-serif;
+        border-radius: 16px;
+        padding: 15px 24px 17px;
+      }
+      .wallet-button-wrapper {
+        display: flex;
+        justify-content: center;
+        color: #000;
+      }
+      .wallet-button {
+        font-family: Inter, sans-serif;
+        border-radius: 10px;
+        background-color: #f9d326;
+        justify-content: center;
+        padding: 21px 28px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container2">
+      <div class="logo-wrapper">
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/c2e2995dfd400ec599c3a80643b05b4a88e6d820b81ea988db75be43794385e2?apiKey=fd199fa6f64347d3af7f8cc744df61ff&"
+          alt="Company Logo"
+          class="logo-image"
+        />
+        <div class="logo-text-wrapper">
+          <div class="logo-title">BITVERSE</div>
+          <div class="logo-subtitle">FINANCE</div>
+        </div>
+      </div>
+      <nav class="nav-wrapper">
+        <div class="nav-items">
+          <div class="nav-item">About</div>
+          <div class="nav-item">Our Products</div>
+          <div class="nav-item">Token Utility</div>
+          <div class="nav-item">Roadmap</div>
+        </div>
+        <div class="wallet-button-wrapper">
+          <button class="wallet-button" tabindex="0">Connect Wallet</button>
+        </div>
+      </nav>
+    </header>
+    <div class="container1" style="background-color: black">
+      <div class="content-wrapper">
+        <section class="text-content">
+          <img src="Frame 4.png" alt="">
+        </section>
+        <section class="description-container">
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur. Porta amet tellus
+            suspendisse id velit proin eleifend id mauris. Amet sem in id eget
+            nunc quam lacus tellus augue.
+          </p>
+          <div class="button-container">
+            <div class="button-wrapper">
+              <div class="button-background">
+                <div class="button-content" tabindex="0" role="button">
+                  <span class="button-text">Get Started</span>
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/5c8bdb853b2da3bcbb1750ca9f8a31ec69fd209c024cb4c7b97676032c64b9f1?apiKey=fd199fa6f64347d3af7f8cc744df61ff&"
+                    alt=""
+                    class="button-icon"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
